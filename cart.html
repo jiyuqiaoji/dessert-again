@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - Кондитерская СЛАДОСТИ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>СЛАДОСТИ</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="western-desserts.html">Западные десерты</a></li>
+                <li><a href="eastern-desserts.html">Восточные десерты</a></li>
+                <li><a href="cart.html">Корзина</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 购物车标题 -->
+    <section class="cart-header">
+        <div class="container">
+            <h2>Моя корзина</h2>
+            <p class="cart-description">Просмотрите и управляйте своими выбранными вкусными десертами</p>
+        </div>
+    </section>
+
+    <!-- 购物车内容 -->
+    <section class="cart-content">
+        <div class="container">
+            <!-- 空购物车状态 -->
+            <div id="emptyCart" class="empty-cart">
+                <div class="empty-cart-icon">🛒</div>
+                <h3>Ваша корзина пуста</h3>
+                <p>Идите и выберите какие-нибудь вкусные десерты!</p>
+                <a href="index.html" class="continue-shopping-btn">Продолжить покупки</a>
+            </div>
+
+            <!-- 购物车商品列表 -->
+            <div id="cartItems" class="cart-items">
+                <div class="cart-table">
+                    <div class="cart-header-row">
+                        <div class="cart-header-item cart-product">Продукт</div>
+                        <div class="cart-header-item cart-price">Цена</div>
+                        <div class="cart-header-item cart-quantity">Количество</div>
+                        <div class="cart-header-item cart-subtotal">Подытог</div>
+                        <div class="cart-header-item cart-action">Действие</div>
+                    </div>
+                    
+                    <!-- 购物车商品将通过JavaScript动态加载 -->
+                    <div id="cartItemsList" class="cart-items-list">
+                        <!-- 商品项示例 -->
+                        <!-- <div class="cart-item-row">
+                            <div class="cart-item cart-product">
+                                <img src="../images/placeholder.jpg" alt="商品图片">
+                                <div class="product-info">
+                                    <h4>商品名称</h4>
+                                </div>
+                            </div>
+                            <div class="cart-item cart-price">¥0.00</div>
+                            <div class="cart-item cart-quantity">
+                                <div class="quantity-control">
+                                    <button class="quantity-btn decrease-quantity">-</button>
+                                    <input type="number" value="1" min="1" readonly>
+                                    <button class="quantity-btn increase-quantity">+</button>
+                                </div>
+                            </div>
+                            <div class="cart-item cart-subtotal">¥0.00</div>
+                            <div class="cart-item cart-action">
+                                <button class="remove-item-btn">Удалить</button>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 购物车摘要和结算 -->
+    <section class="cart-summary">
+        <div class="container">
+            <div class="summary-content">
+                <h3>Итог заказа</h3>
+                <div class="summary-details">
+                    <div class="summary-row">
+                        <span>Стоимость продуктов</span>
+                        <span id="subtotal">¥0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Доставка</span>
+                        <span id="shipping">¥0.00</span>
+                    </div>
+                    <div class="summary-row discount">
+                        <span>Скидка</span>
+                        <span id="discount">-¥0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Итог</span>
+                        <span id="total">¥0.00</span>
+                    </div>
+                </div>
+                <div class="cart-actions">
+                    <a href="index.html" class="continue-shopping-btn">Продолжить покупки</a>
+                    <button id="checkoutBtn" class="checkout-btn">Перейти к оформлению</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 推荐商品 -->
+    <section class="recommended-section">
+        <div class="container">
+            <h3>Возможно, вам понравится также</h3>
+            <div id="recommendedProducts" class="recommended-products">
+                <!-- 推荐商品将通过JavaScript动态加载 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>СЛАДОСТИ</h3>
+                <p>Лучшие десерты в городе</p>
+                <p>Адрес: ул. Сладкая, 123</p>
+                <p>Телефон: +7 (123) 456-78-90</p>
+            </div>
+            <div class="footer-links">
+                <h4>Карта сайта</h4>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="western-desserts.html">Западные десерты</a></li>
+                    <li><a href="eastern-desserts.html">Восточные десерты</a></li>
+                    <li><a href="promotions.html">Акции</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                    <li><a href="cart.html">Корзина</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Мы в соцсетях</h4>
+                <div class="social-icons">
+                    <!-- 社交媒体图标占位 -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 СЛАДОСТИ. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- 数据文件和JavaScript -->
+    <script src="data/eastern-desserts.js"></script>
+    <script src="data/western-desserts.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

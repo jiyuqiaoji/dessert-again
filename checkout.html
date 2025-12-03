@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа - Кондитерская СЛАДОСТИ</title>
+    <!-- 引入公共样式 -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 引入结账页面样式 -->
+    <link rel="stylesheet" href="css/checkout.css">
+    <!-- 引入图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>СЛАДОСТИ</h1>
+            </div>
+            <ul>
+                 <li><a href="index.html">Главная</a></li>
+                <li><a href="western-desserts.html">Западные десерты</a></li>
+                <li><a href="eastern-desserts.html">Восточные десерты</a></li>
+                <li><a href="cart.html">Корзина</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 主要内容 -->
+    <main>
+        <!-- 页面标题 -->
+        <section class="checkout-header">
+            <div class="container">
+                <h1>Выполните свой заказ </h1>
+                <div class="checkout-steps">
+                        <div class="step completed">
+                            <span class="step-number">1</span>
+                            <span class="step-text">Корзина</span>
+                        </div>
+                        <div class="step-arrow"></div>
+                        <div class="step active">
+                            <span class="step-number">2</span>
+                            <span class="step-text">Оформление</span>
+                        </div>
+                        <div class="step-arrow"></div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <span class="step-text">Подтверждение</span>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <!-- 结账表单和订单摘要 -->
+        <section class="checkout-container">
+            <div class="container">
+                <div class="checkout-content">
+                    <!-- 结账表单 -->
+                    <div class="checkout-form-section">
+                        <h2>Ваше сообщение</h2>
+                        
+                        <!-- 个人信息表单 -->
+                        <div class="form-section">
+                            <h3>Личная информация</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fullName">Полное имя <span class="required">*</span></label>
+                                    <input type="text" id="fullName" name="fullName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Номер телефона <span class="required">*</span></label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Электронная почта <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <!-- 配送地址表单 -->
+                        <div class="form-section">
+                            <h3>Адрес доставки</h3>
+                            <div class="form-group">
+                                <label for="address">Полный адрес <span class="required">*</span></label>
+                                <textarea id="address" name="address" rows="3" required></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="postalCode">Почтовый индекс</label>
+                                    <input type="text" id="postalCode" name="postalCode">
+                                </div>
+                                <div class="form-group">
+                                    <label for="addressType">Тип адреса</label>
+                                    <select id="addressType" name="addressType">
+                                        <option value="home">Дом</option>
+                                        <option value="work">Работа</option>
+                                        <option value="other">Другое</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 订单摘要 -->
+                    <div class="order-summary">
+                        <h2>Итог заказа</h2>
+                        
+                        <!-- 订单商品列表 -->
+                        <div class="order-items">
+                            <div id="orderItemsList"></div>
+                        </div>
+
+                        <!-- 价格摘要 -->
+                        <div class="price-summary">
+                            <div class="price-row">
+                                <span class="price-label">Стоимость товаров</span>
+                                <span id="orderSubtotal" class="price-value">¥0.00</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">Стоимость доставки</span>
+                                <span id="orderShipping" class="price-value">¥0.00</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">Скидка</span>
+                                <span id="orderDiscount" class="price-value discount">-¥0.00</span>
+                            </div>
+                            <div class="price-row total">
+                                <span class="price-label">Итоговая сумма</span>
+                                <span id="orderTotal" class="price-value total">¥0.00</span>
+                            </div>
+                        </div>
+
+                        <!-- 提交订单按钮 -->
+                        <button id="placeOrderBtn" class="place-order-btn">Оформить заказ</button>
+
+                        <!-- 支付安全信息 -->
+                        <div class="payment-security">
+                            <i class="fas fa-lock"></i>
+                            <span>Ваши платежные данные защищены</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系信息 -->
+        <section class="contact-info">
+            <div class="container">
+                <h2>Есть вопросы?</h2>
+                <p>Наша служба поддержки всегда готова помочь вам</p>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <span>+7 (123) 123-45-67</span>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <span>3486433529@qq.com</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>СЛАДОСТИ</h3>
+                <p>Лучшие десерты в городе</p>
+                <p>Адрес: ул. Сладкая, 123</p>
+                <p>Телефон: +7 (123) 456-78-90</p>
+            </div>
+            <div class="footer-links">
+                <h4>Карта сайта</h4>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="western-desserts.html">Западные десерты</a></li>
+                    <li><a href="eastern-desserts.html">Восточные десерты</a></li>
+                    <li><a href="promotions.html">Акции</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                    <li><a href="cart.html">Корзина</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Мы в соцсетях</h4>
+                <div class="social-icons">
+                    <!-- 社交媒体图标占位 -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 СЛАДОСТИ. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- 加载数据文件 -->
+    <script src="data/eastern-desserts.js"></script>
+    <script src="data/western-desserts.js"></script>
+    
+    <!-- 引入购物车JavaScript -->
+    <script src="js/cart.js"></script>
+    
+    <!-- 引入结账页面JavaScript -->
+    <script src="js/checkout.js"></script>
+</body>
+</html>
